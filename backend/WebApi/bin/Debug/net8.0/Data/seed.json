@@ -1,0 +1,52 @@
+[
+  {
+    "contractId": "CONTRATO-001",
+    "clientId": "CLIENTE-123",
+    "clientName": "João da Silva",
+    "installments": [
+      {
+        "installmentId": "P001",
+        "dueDate": "2025-06-10",
+        "amount": 1500.00,
+        "status": "A_VENCER"
+      },
+      {
+        "installmentId": "P002",
+        "dueDate": "2025-07-10",
+        "amount": 1500.00,
+        "status": "A_VENCER"
+      },
+      {
+        "installmentId": "P003",
+        "dueDate": "2025-08-10",
+        "amount": 1500.00,
+        "status": "PAGO"
+      }
+    ]
+  },
+  {
+    "contractId": "CONTRATO-002",
+    "clientId": "CLIENTE-456",
+    "clientName": "Maria Oliveira",
+    "installments": [
+      {
+        "installmentId": "P004",
+        "dueDate": "2025-05-15",
+        "amount": 2000.00,
+        "status": "PAGO"
+      },
+      {
+        "installmentId": "P005",
+        "dueDate": "2025-06-15",
+        "amount": 2000.00,
+        "status": "A_VENCER"
+      },
+      {
+        "installmentId": "P006",
+        "dueDate": "2025-07-15",
+        "amount": 2000.00,
+        "status": "A_VENCER"
+      }
+    ]
+  }
+]
