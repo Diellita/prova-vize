@@ -1,24 +1,35 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApi.Models
 {
-    public enum AdvanceRequestStatus
-    {
-        PENDENTE = 0,
-        APROVADO = 1,
-        REPROVADO = 2
-    }
-
     public class AdvanceRequest
     {
+        [Key]
         public int Id { get; set; }
-        public string RequestCode { get; set; } = Guid.NewGuid().ToString("N"); // código externo, se quiser expor
-        public string ContractId { get; set; } = null!;   // referencia o Contract.ContractId (código externo)
-        public string RequestedByUserId { get; set; } = null!; // email do cliente (do token)
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        // quem pediu (cliente dono do contrato)
+        [Required]
+        public int ClienteId { get; set; }
+        public Cliente Cliente { get; set; } = null!;
+
+        // contrato alvo da antecipação
+        [Required]
+        public int ContratoId { get; set; }    
+        public Contrato Contrato { get; set; } = null!;
+
+        // status da solicitação
+        [Required]
         public AdvanceRequestStatus Status { get; set; } = AdvanceRequestStatus.PENDENTE;
+
+        // metadados
+        public string? Notes { get; set; }
+        [Required]
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime? ApprovedAt { get; set; }
 
+        // itens (parcelas selecionadas)
         public List<AdvanceRequestItem> Items { get; set; } = new();
     }
 }

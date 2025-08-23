@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+using WebApi.Services.AdvanceRequests;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +40,9 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("AprovadorOnly", p => p.RequireRole("APROVADOR"));
     options.AddPolicy("ClienteOnly", p => p.RequireRole("CLIENTE"));
 });
+
+
+builder.Services.AddScoped<IAdvanceRequestService, AdvanceRequestService>();
 
 
 // Add services to the container.
