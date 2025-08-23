@@ -1,0 +1,34 @@
+[
+  {
+    "contratoId": 1,
+    "clienteId": 1,
+    "clienteNome": "João da Silva",
+    "nomeContrato": "JS_01",
+    "parcelas": [
+      { "parcelaId": 1, "numeroParcela": 1, "vencimento": "2025-08-13", "valor": 1500.00, "status": "PAGO" },
+      { "parcelaId": 2, "numeroParcela": 2, "vencimento": "2025-09-13", "valor": 1500.00, "status": "A_VENCER" },
+      { "parcelaId": 3, "numeroParcela": 3, "vencimento": "2025-10-13", "valor": 1500.00, "status": "A_VENCER" },
+      { "parcelaId": 4, "numeroParcela": 1, "vencimento": "2025-11-13", "valor": 1500.00, "status": "A_VENCER" },
+      { "parcelaId": 5, "numeroParcela": 2, "vencimento": "2025-12-13", "valor": 1500.00, "status": "A_VENCER" },
+      { "parcelaId": 6, "numeroParcela": 3, "vencimento": "2026-01-13", "valor": 1500.00, "status": "A_VENCER" }
+    ]
+  },
+  {
+    "contratoId": 2,
+    "clienteId": 2,
+    "clienteNome": "Maria Oliveira",
+    "nomeContrato": "MO_02",
+    "parcelas": [
+      { "parcelaId": 1, "numeroParcela": 1, "vencimento": "2025-06-15", "valor": 2000.00, "status": "PAGO" },
+      { "parcelaId": 2, "numeroParcela": 2, "vencimento": "2025-07-15", "valor": 2000.00, "status": "PAGO" },
+      { "parcelaId": 3, "numeroParcela": 3, "vencimento": "2025-08-15", "valor": 2000.00, "status": "PAGO" },
+      { "parcelaId": 4, "numeroParcela": 4, "vencimento": "2025-09-15", "valor": 2000.00, "status": "A_VENCER" },
+      { "parcelaId": 5, "numeroParcela": 5, "vencimento": "2025-10-15", "valor": 2000.00, "status": "A_VENCER" },
+      { "parcelaId": 6, "numeroParcela": 6, "vencimento": "2025-11-15", "valor": 2000.00, "status": "A_VENCER" },
+      { "parcelaId": 7, "numeroParcela": 7, "vencimento": "2025-12-15", "valor": 2000.00, "status": "A_VENCER" },
+      { "parcelaId": 8, "numeroParcela": 8, "vencimento": "2026-01-15", "valor": 2000.00, "status": "A_VENCER" },
+      { "parcelaId": 9, "numeroParcela": 9, "vencimento": "2026-02-15", "valor": 2000.00, "status": "A_VENCER" }
+
+    ]
+  }
+]
