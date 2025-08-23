@@ -1,15 +1,34 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Frontend (Vite) - Chrome",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/front",
+      "preLaunchTask": "dev Vite"
+    },
+    {
+      "name": ".NET Core Launch (WebApi)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build WebApi",
+      "program": "${workspaceFolder}/Backend/WebApi/bin/Debug/net8.0/WebApi.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Backend/WebApi",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Frontend + Backend",
+      "configurations": [
+        ".NET Core Launch (WebApi)",
+        "Frontend (Vite) - Chrome"
+      ],
+      "stopAll": true
+    }
+  ]
 }
