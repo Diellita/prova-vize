@@ -93,6 +93,8 @@ Desenvolvido para gerenciar solicitações de antecipação de parcelas, com per
 - O aprovador pode visualizar e gerenciar **todas** as solicitações.
 - Cada cliente só enxerga **suas próprias** solicitações e contratos.
 - O fluxo de aprovação/reprovação atualiza automaticamente os status de parcelas e contratos.
+- Mock: arquivo (../mock-data/contracts.json) incluído conforme enunciado. O app usa seed via EF para popular o banco; o JSON é apenas referência para a avaliação.
+
 
 ---
 
