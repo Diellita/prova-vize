@@ -1,98 +1,119 @@
-// FILE: src/pages/Login.tsx
+// front/src/pages/Login.tsx
 import React, { useState } from "react";
-import bgLogin from "../assets/imgs/gestao-imobiliaria.jpg";
-import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { login } from "../lib/api";
 
-interface LoginProps {
-  onSuccess: () => void;
-}
+type Props = {
+  onSuccess: (role: "CLIENTE" | "APROVADOR") => void;
+};
 
-export default function Login({ onSuccess }: LoginProps) {
-  const { setAuth } = useAuth();
+export default function Login({ onSuccess }: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
+const handleLogin = async () => {
+  setError(null);
+  try {
+    const data = await login(email, password); 
 
-    try {
-      if (!email || !password) {
-        throw new Error("Informe email e senha");
-      }
+    localStorage.setItem("role", data.role);
 
-      // Detecta e NORMALIZA o perfil
-      const perfilDetectadoRaw = email.toLowerCase().includes("aprovador") ? "APROVADOR" : "CLIENTE";
-      const perfil = String(perfilDetectadoRaw).toUpperCase().trim() as "APROVADOR" | "CLIENTE";
-
-      // Mock simples de usuário
-      const usuarioId = perfil === "APROVADOR" ? "u2" : "u1";
-
-      // Salva no Context
-      setAuth({
-        isLoggedIn: true,
-        perfil,
-        usuarioId,
-      });
-
-      // **IMPORTANTE**: Salva também no localStorage para a Lista/Modal lerem igual
-      localStorage.setItem("session", JSON.stringify({ perfil, usuarioId }));
-
-      setTimeout(() => {
-        setLoading(false);
-        onSuccess();
-      }, 500);
-    } catch (err: any) {
-      setError(err.message || "Erro ao fazer login");
-      setLoading(false);
+    if (data.role === "APROVADOR") {
+      onSuccess("APROVADOR");
+      navigate("/admin");
+    } else {
+      onSuccess("CLIENTE");
+      navigate("/lista");
     }
+  } catch (e: any) {
+    setError(e?.response?.data?.message || e?.message || "Erro no login");
+  }
+};
+
+
+  const pageStyle: React.CSSProperties = {
+    minHeight: "100vh",
+    backgroundImage: "url('/src/assets/imgs/gestao-imobiliaria.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "24px",
+  };
+
+  const cardStyle: React.CSSProperties = {
+    width: 380,
+    maxWidth: "100%",
+    background: "rgba(255,255,255,0.9)",
+    borderRadius: 12,
+    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+    padding: 24,
+    fontFamily: "Inter, system-ui, Arial, sans-serif",
+  };
+
+  const titleStyle: React.CSSProperties = {
+    margin: 0,
+    marginBottom: 16,
+    fontSize: 24,
+  };
+
+  const inputStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "10px 12px",
+    marginBottom: 12,
+    border: "1px solid #d0d7de",
+    borderRadius: 8,
+    fontSize: 14,
+  };
+
+  const btnStyle: React.CSSProperties = {
+    width: "100%",
+    padding: "10px 12px",
+    background: "#111827",
+    color: "#fff",
+    border: 0,
+    borderRadius: 8,
+    fontSize: 14,
+    cursor: "pointer",
+  };
+
+  const errorStyle: React.CSSProperties = {
+    background: "#fee2e2",
+    color: "#b91c1c",
+    padding: "8px 10px",
+    borderRadius: 8,
+    marginBottom: 12,
+    fontSize: 13,
   };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url(${bgLogin})` }}
-    >
-      <div
-        className="bg-white p-8 rounded-lg shadow-md w-full"
-        style={{ width: "32rem", height: "32rem", backgroundColor: "#f9f9fb" }}
-      >
-        <div className="items-center justify-center" style={{ marginTop: "22%" }}>
-          <h1 className="text-3xl font-bold mb-6 text-center">Login</h1>
+    <div style={pageStyle}>
+      <div style={cardStyle}>
+        <h2 style={titleStyle}>Login</h2>
 
-          {error && <div className="bg-red-100 text-red-700 p-2 mb-4 rounded">{error}</div>}
+        {error && <div style={errorStyle}>{error}</div>}
 
-          <form onSubmit={handleLogin} className="flex flex-col gap-4">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-
-            <input
-              type="password"
-              placeholder="Senha"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
-            >
-              {loading ? "Entrando..." : "Entrar"}
-            </button>
-          </form>
-        </div>
+        <input
+          type="email"
+          placeholder="E-mail"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={inputStyle}
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          style={inputStyle}
+          onKeyDown={(e) => e.key === "Enter" && handleLogin()}
+        />
+        <button onClick={handleLogin} style={btnStyle}>
+          Acessar
+        </button>
       </div>
     </div>
   );

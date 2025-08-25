@@ -1,190 +1,214 @@
-Vize — Solicitação de Antecipação de Parcelas (API)
+# Vize — Solicitação de Antecipação de Parcelas (API + Frontend)
 
-Projeto de prova técnica: módulo de Solicitação de Antecipação de Parcelas.
+Módulo de **Solicitação de Antecipação de Parcelas** para CRM imobiliário.
 
-Stack
+---
 
-.NET 8 / C#
+## 📦 Stack
 
-ASP.NET Core Web API
+### Backend
+- .NET 8 / C#
+- ASP.NET Core Web API
+- Entity Framework Core + PostgreSQL
+- Autenticação JWT (mock)
+- Migrations + Seed automático no startup
+- Mock de dados em `mock/contracts.json` (documentação de modelo)
 
-Entity Framework Core + PostgreSQL
+### Frontend
+- React + Vite + TypeScript
+- React Router
+- Axios com **interceptor 401 → /login**
+- Tailwind utilitário (classes) em alguns componentes
 
-JWT (mock) para autenticação
+---
 
-Migrations + Seed automático no startup
+## 🚀 Como rodar
 
-Mock de dados em mock/contracts.json
+### 1) Pré-requisitos
+- .NET 8 SDK  
+- PostgreSQL 15+ (local ou Docker)  
+- Node 18+ (para o frontend)  
 
-Como rodar
-1) Pré-requisitos
+### 2) Banco de dados
+No arquivo **backend/WebApi/appsettings.json**, configure a connection string (chave `ConnectionStrings:Default`), ex.:
 
-.NET 8 SDK
+```txt
+Host=localhost;Port=5432;Database=vize;Username=postgres;Password=postgres;
+```
 
-PostgreSQL 15+ (local ou via Docker)
+A API aplica as **migrations automaticamente** no startup.
 
-2) Banco de dados
-
-Configure a connection string em backend/WebApi/appsettings.json (chave ConnectionStrings:Default), ex.(Host=localhost;Port=5432;Database=vize;Username=postgres;Password=postgres;)
-
-A API aplica as migrations automaticamente no startup.
-
-3) Subir a API
-
-No terminal:
-
+### 3) Subir a API
+```bash
 cd backend/WebApi
 dotnet run
+```
 
-Você verá algo como: Now listening on: http://localhost:5275
+Você verá algo como:
 
-(Use essa porta nos testes.)
+```txt
+Now listening on: http://localhost:5275
+```
 
+> **Importante:** use a porta exibida no console. Se necessário, ajuste o baseURL do frontend.
 
-Regras de negócio (resumo)
+### 4) Subir o Frontend
+```bash
+cd front
+npm i
+npm run dev
+```
 
-Apenas parcelas com vencimento > 30 dias podem ser antecipadas.
+Acesse em: [http://localhost:5173](http://localhost:5173)
 
-O cliente não pode ter outra solicitação PENDENTE.
+---
 
-Ao aprovar, registrar ApprovedAt e marcar parcelas como ANTECIPADA.
+## 🔐 Autenticação (mock JWT)
 
-O cliente só pode solicitar para o próprio contrato.
+**Endpoint:** `POST /auth/token`  
+**Regra:** se o e-mail contém `aprovador` → role = `APROVADOR`, senão `CLIENTE`.
 
-Enums usados (salvos como int no banco):
+- **Cliente de teste (seed):** `cliente.demo@vize.local` ⇒ terá `clientId=1` no token.  
+- **Aprovador de teste (qualquer e-mail com "aprovador"):** `aprovador.demo@vize.local`.
 
-InstallmentStatus: A_VENCER=0, PAGO=1, AGUARDANDO_APROVACAO=2, ANTECIPADA=3
+Exemplos:
 
-AdvanceRequestStatus: PENDENTE=0, APROVADO=1, REPROVADO=2
+```bash
+# CLIENTE
+curl -s -X POST http://localhost:5275/auth/token   -H "Content-Type: application/json"   -d '{"email":"cliente.demo@vize.local","password":"123"}'
 
+# APROVADOR
+curl -s -X POST http://localhost:5275/auth/token   -H "Content-Type: application/json"   -d '{"email":"aprovador.demo@vize.local","password":"123"}'
+```
 
-Autenticação (mock JWT)
+O frontend salva **token**, **role** e **userId** no `localStorage`.
 
-Endpoint: POST /auth/token
-Regra simples: se o e-mail contém aprovador → role = APROVADOR, senão CLIENTE.
+---
 
-Cliente de teste (seed): cliente.demo@vize.local → terá clientId=1 no token.
+## 🔄 Fluxo de uso
 
-Aprovador de teste: use qualquer e-mail com “aprovador”, ex.: aprovador.demo@vize.local.
+### CLIENTE (rota `/lista`)
+- Lista as **minhas solicitações** (`GET /advance-request`).
+- **Criar solicitação** (`POST /advance-request`):
+  - Selecionar **contrato** e **parcela elegível**.
+  - Regras aplicadas (também devem ser validadas no backend):
+    - Apenas parcelas com **status "A VENCER"** e **vencimento > 30 dias**.
+    - Se existe alguma parcela em **"AGUARDANDO_APROVACAO"**, bloqueia novas solicitações.
+    - Cliente só solicita **para o próprio contrato**.
+  - Observações vão em `notes`. Se houver parcela selecionada, prefixamos com `[PARCELA N]`.
 
-Exemplo (cliente):
+### APROVADOR (rota `/admin`)
+- Lista **todas as solicitações** (`GET /advance-request/admin`).
+- **Aprovação em massa**: `PUT /advance-request/approve` com `{ "ids": [...] }`.
+- **Reprovação em massa**:
+  - Se existir `PUT /advance-request/reject`, usar `{ "ids": [...] }`.
+  - Caso contrário, o front envia `{ "ids": [...], "status": "REPROVADO" }`.  
+    → Se o backend não suportar, mostra erro claro.
 
-curl -s -X POST http://localhost:5275/auth/token \
-  -H "Content-Type: application/json" \
-  -d '{"email":"cliente.demo@vize.local","password":"123"}'
+---
 
+## 🛡️ Guards e UX (frontend)
 
-Exemplo (aprovador):
+- `CLIENTE` → `/lista`  
+- `APROVADOR` → `/admin`  
+- Sem token/role: redireciona para `/login`.  
+- **401 global:** interceptor limpa credenciais e redireciona para `/login`.  
+- **Logout:** acessar `/logout`.  
 
+> Base URL configurável em `front/src/lib/api.ts`  
+> Padrão: `http://localhost:5290` (ajuste conforme a porta real, ex.: `5275`).  
 
-curl -s -X POST http://localhost:5275/auth/token \
-  -H "Content-Type: application/json" \
-  -d '{"email":"aprovador.demo@vize.local","password":"123"}'
+---
 
+## 📑 Endpoints principais
 
-Endpoints principais
-Criar solicitação (CLIENTE)
-
+### Criar solicitação (CLIENTE)
+```bash
 POST /advance-request
+{
+  "contratoId": 1,
+  "notes": "Teste"
+}
+```
 
-curl -s -X POST http://localhost:5275/advance-request \
-  -H "Authorization: Bearer <TOKEN_CLIENTE>" \
-  -H "Content-Type: application/json" \
-  -d '{"contratoId":1,"notes":"Teste"}'
-
-
-Detalhe da solicitação (CLIENTE/APROVADOR)
-
+### Detalhe da solicitação
+```bash
 GET /advance-request/{id}
+```
 
-curl -s http://localhost:5275/advance-request/1 \
-  -H "Authorization: Bearer <TOKEN_APROVADOR>"
+### Minhas solicitações (CLIENTE)
+```bash
+GET /advance-request
+```
 
+### Lista do aprovador (APROVADOR)
+```bash
+GET /advance-request/admin
+```
 
-Listar solicitações do cliente (CLIENTE)
-
-GET /advance-request?status=PENDENTE&startDate=...&endDate=...&page=1&pageSize=10
-
-curl -s "http://localhost:5275/advance-request?page=1&pageSize=10" \
-  -H "Authorization: Bearer <TOKEN_CLIENTE>"
-
-
-Listar para aprovador (todas) (APROVADOR)
-
-GET /advance-request/admin?status=PENDENTE&page=1&pageSize=10
-
-
-Listar para aprovador (todas) (APROVADOR)
-
-GET /advance-request/admin?status=PENDENTE&page=1&pageSize=10
-
-
-Aprovação em massa (APROVADOR)
-
+### Aprovação em massa
+```bash
 PUT /advance-request/approve
+{ "ids": [1,2,3] }
+```
 
-curl -i -X PUT http://localhost:5275/advance-request/approve \
-  -H "Authorization: Bearer <TOKEN_APROVADOR>" \
-  -H "Content-Type: application/json" \
-  -d '{"ids":[1,2,3]}'
-
-
-Retorno esperado: 204 No Content.
-
-Rejeição em massa (APROVADOR)
-
+### Rejeição em massa
+```bash
+# A) Endpoint dedicado
 PUT /advance-request/reject
+{ "ids": [4,5] }
 
+# B) Mesmo endpoint de approve com status
+PUT /advance-request/approve
+{ "ids": [4,5], "status": "REPROVADO" }
+```
 
-curl -i -X PUT http://localhost:5275/advance-request/reject \
-  -H "Authorization: Bearer <TOKEN_APROVADOR>" \
-  -H "Content-Type: application/json" \
-  -d '{"ids":[4,5]}'
+---
 
-Retorno esperado: 204 No Content.
+## 📌 Regras de negócio
 
-Seed de dados
+- Apenas parcelas com vencimento **> 30 dias** podem ser antecipadas.  
+- **Apenas uma solicitação pendente por cliente**.  
+- Ao aprovar, registrar `ApprovedAt` e marcar parcelas como **ANTECIPADA**.  
+- Cliente só pode solicitar para **seu próprio contrato**.  
 
-Ao iniciar a API, o DbSeeder cria:
+**Enums** (salvos como int no banco):  
+- `InstallmentStatus`: `A_VENCER=0`, `PAGO=1`, `AGUARDANDO_APROVACAO=2`, `ANTECIPADA=3`  
+- `AdvanceRequestStatus`: `PENDENTE=0`, `APROVADO=1`, `REPROVADO=2`  
 
-1 USUÁRIO CLIENTE e 1 USUÁRIO APROVADOR
+---
 
-1 CLIENTE (id = 1) vinculado ao usuário cliente
+## 🌱 Seed de dados
 
-1 CONTRATO (CONTRATO-001) com 3 parcelas:
+No startup, o `DbSeeder` cria:
+- 1 usuário **CLIENTE** e 1 **APROVADOR**  
+- 1 cliente (id=1) vinculado ao usuário cliente  
+- 1 contrato (`CONTRATO-001`) com 3 parcelas:  
+  - 1 paga, 1 a vencer (<30d), 1 elegível (>30d)  
 
-1 paga, 1 a vencer (<30d), 1 elegível (>30d)
+> O arquivo **`mock/contracts.json`** é o **requerido pela prova** (referência do modelo).  
+> Ele **não é lido pela API**, apenas documenta o schema.  
 
-Para testar o fluxo: gere TOKEN_CLIENTE, crie uma solicitação; depois gere TOKEN_APROVADOR e aprove/rejeite em massa.
+---
 
-Mock JSON
+## ⚡ Teste rápido do fluxo
 
-Arquivo requerido pela prova: mock/contracts.json
-Ele não é lido pela API, serve de referência/documentação do modelo.
-IDs inteiros e status alinhados com os enums do projeto.
+1. Gere token do **CLIENTE** e crie solicitação:
+```bash
+curl -s -X POST http://localhost:5275/advance-request   -H "Authorization: Bearer <TOKEN_CLIENTE>"   -H "Content-Type: application/json"   -d '{"contratoId":1,"notes":"Teste"}'
+```
 
+2. Gere token do **APROVADOR** e aprove em massa:
+```bash
+curl -i -X PUT http://localhost:5275/advance-request/approve   -H "Authorization: Bearer <TOKEN_APROVADOR>"   -H "Content-Type: application/json"   -d '{"ids":[1,2,3]}'
+```
 
-Observações
+---
 
-As migrations e o seed rodam automaticamente no startup.
+## 🛠️ Troubleshooting
 
-O banco usa o schema public com tabelas tbl*.
-
-O campo status no banco é integer por ser enum no C#.
-
-Qualquer dúvida sobre setup, verifique a porta que a API abriu no console.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- **401 contínuo** → token expirado ou removido. O interceptor limpa e redireciona para `/login`.  
+- **CORS** → garantir que a API libera `http://localhost:5173–5186`.  
+- **Porta errada** → confira no console da API (ex.: 5275) e ajuste `front/src/lib/api.ts`.  
+- **Cache do Vite** → pare e rode `npm run dev` de novo.  
+- **Rejeição não funciona** → backend pode não suportar. Use o formato B ou implemente `/advance-request/reject`.  

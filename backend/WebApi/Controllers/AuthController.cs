@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using WebApi.Data;
+using WebApi.Models;
 
 namespace WebApi.Controllers;
 
@@ -14,42 +17,83 @@ public record TokenResponse(string AccessToken, string Role, string UserId);
 public class AuthController : ControllerBase
 {
     private readonly IConfiguration _cfg;
-    public AuthController(IConfiguration cfg) => _cfg = cfg;
+    private readonly AppDbContext _db;
 
-    [HttpPost("token")]
-    public ActionResult<TokenResponse> Token([FromBody] LoginDto dto)
+    // Aprovador fixo (simples para teste)
+    private const string ApproverEmail = "aprovador.demo@vize.com";
+    private const string ApproverPassword = "123456";
+
+    public AuthController(IConfiguration cfg, AppDbContext db)
     {
-        if (string.IsNullOrWhiteSpace(dto.Email))
-            return BadRequest("Email is required");
-
-        var role = dto.Email.Contains("aprovador", StringComparison.OrdinalIgnoreCase)
-            ? "APROVADOR" : "CLIENTE";
-
-        var userId = dto.Email.Trim().ToLowerInvariant();
-        var token = GenerateJwt(userId, role);
-        return Ok(new TokenResponse(token, role, userId));
+        _cfg = cfg;
+        _db  = db;
     }
 
-    private string GenerateJwt(string userId, string role)
+    [HttpPost("token")]
+        public async Task<ActionResult<TokenResponse>> Token([FromBody] LoginDto dto, CancellationToken ct)
+        {
+            if (dto is null || string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
+                return BadRequest("Email e senha são obrigatórios.");
+
+            var email = dto.Email.Trim();
+
+            // 1) APROVADOR em memória (checa ANTES do cliente do banco)
+            if (email.Equals(ApproverEmail, StringComparison.OrdinalIgnoreCase) && dto.Password == ApproverPassword)
+            {
+                var tokenAprov = IssueJwt(
+                    userId: "approver-1",
+                    email: ApproverEmail,
+                    role: "APROVADOR",
+                    clientId: null
+                );
+                return Ok(new TokenResponse(tokenAprov, "APROVADOR", "approver-1"));
+            }
+
+            // 2) CLIENTE no banco
+            var cliente = await _db.Clientes
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Email == email && c.Senha == dto.Password, ct);
+
+            if (cliente != null)
+            {
+                var tokenCliente = IssueJwt(
+                    userId: $"client-{cliente.Id:D2}",
+                    email: cliente.Email,
+                    role: "CLIENTE",
+                    clientId: cliente.Id.ToString()
+                );
+                return Ok(new TokenResponse(tokenCliente, "CLIENTE", $"client-{cliente.Id:D2}"));
+            }
+
+            // 3) Credenciais inválidas
+            return Unauthorized(new { message = "E-mail ou senha inválidos." });
+        }
+
+    private string IssueJwt(string userId, string email, string role, string? clientId)
     {
         var section = _cfg.GetSection("Jwt");
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(section["Key"]!));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-        var claims = new[]
+        var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, userId),
-            new Claim(ClaimTypes.NameIdentifier, userId),
-            new Claim(ClaimTypes.Role, role)
+            new(JwtRegisteredClaimNames.Sub, userId),
+            new(ClaimTypes.NameIdentifier, userId),
+            new(ClaimTypes.Email, email),
+            new(ClaimTypes.Role, role),
+            new("role", role)
         };
+        if (!string.IsNullOrWhiteSpace(clientId))
+            claims.Add(new Claim("clientId", clientId));
 
         var token = new JwtSecurityToken(
             issuer: section["Issuer"],
             audience: section["Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(int.Parse(section["ExpiresMinutes"]!)),
+            expires: DateTime.UtcNow.AddHours(2),
             signingCredentials: creds
         );
+
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

@@ -1,4 +1,4 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebApi.DTOs.AdvanceRequests
 {
@@ -7,6 +7,9 @@ namespace WebApi.DTOs.AdvanceRequests
         [Required]
         public int ContratoId { get; set; }
 
+        public int? ParcelaNumero { get; set; }
+
         public string? Notes { get; set; }
+
     }
 }

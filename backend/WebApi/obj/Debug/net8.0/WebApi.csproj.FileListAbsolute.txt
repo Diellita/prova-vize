@@ -1,5 +1,6 @@
 C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\appsettings.json
+C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\Data\seed.json
 C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\WebApi.exe
 C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\WebApi.deps.json
 C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\WebApi.runtimeconfig.json
@@ -112,4 +113,3 @@ C:\Users\green\Desktop\Vize\backend\WebApi\obj\Debug\net8.0\refint\WebApi.dll
 C:\Users\green\Desktop\Vize\backend\WebApi\obj\Debug\net8.0\WebApi.pdb
 C:\Users\green\Desktop\Vize\backend\WebApi\obj\Debug\net8.0\WebApi.genruntimeconfig.cache
 C:\Users\green\Desktop\Vize\backend\WebApi\obj\Debug\net8.0\ref\WebApi.dll
-C:\Users\green\Desktop\Vize\backend\WebApi\bin\Debug\net8.0\Data\seed.json

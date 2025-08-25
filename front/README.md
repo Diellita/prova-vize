@@ -1,69 +1,98 @@
-# React + TypeScript + Vite
+# Vize - Sistema de Antecipação
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto fullstack com **React + TypeScript + Vite** no frontend e **.NET 8 (ASP.NET Core)** no backend.  
+Desenvolvido para gerenciar solicitações de antecipação de parcelas, com perfis **Cliente** e **Aprovador**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias
 
-## Expanding the ESLint configuration
+- **Frontend**
+  - React + TypeScript
+  - Vite
+  - TailwindCSS
+  - SweetAlert2
+  - Axios
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Backend**
+  - .NET 8 (ASP.NET Core Web API)
+  - Entity Framework Core
+  - PostgreSQL
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## ⚙️ Funcionalidades
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Cliente**
+  - Autenticação e login
+  - Visualização e criação de solicitações de antecipação
+  - Acompanhamento do status das solicitações
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Aprovador**
+  - Visualização das solicitações pendentes
+  - Aprovação ou reprovação em lote
+  - Filtros e status destacados
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ▶️ Como rodar o projeto
+
+### Backend
+1. Acesse a pasta `backend`:
+   ```sh
+   cd backend/WebApi
+   ```
+2. Execute as migrações (se necessário):
+   ```sh
+   dotnet ef database update
+   ```
+3. Rode a API:
+   ```sh
+   dotnet run
+   ```
+   Por padrão, disponível em: **http://localhost:5275**
+
+### Frontend
+1. Acesse a pasta `front`:
+   ```sh
+   cd front
+   ```
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Rode o projeto:
+   ```sh
+   npm run dev
+   ```
+   Por padrão, disponível em: **http://localhost:5173**
+
+---
+
+## 👥 Perfis de acesso (seed)
+- **Aprovador**
+  - Email: `aprovador.demo@vize.com`
+  - Senha: `123456`
+
+- **Clientes (exemplos seed)**
+  - Ana Sousa — `ana.sousa@vize.com` / `as123456`
+  - João Ribeiro — `joao.ribeiro@vize.com` / `jr123456`
+  - Regina Falange — `regina.falange@vize.com` / `rf123456`
+  - Gabriel Alves — `gabriel.alves@vize.com` / `ga123456`
+  - Lucas Machado — `lucas.machado@vize.com` / `lm123456`
+  - Pedro Rocha — `pedro.rocha@vize.com` / `pr123456`
+  - Renato Santos — `renato.santos@vize.com` / `rs123456`
+  - Fátima Mohamad — `fatima.mohamad@vize.com` / `fm123456`
+  - Ibrahim Mustafa — `ibrahim.mustafa@vize.com` / `im123456`
+  - Hideki Suzuki — `hideki.suzuki@vize.com` / `hs123456`
+
+---
+
+## 📌 Observações
+
+- O aprovador pode visualizar e gerenciar **todas** as solicitações.
+- Cada cliente só enxerga **suas próprias** solicitações e contratos.
+- O fluxo de aprovação/reprovação atualiza automaticamente os status de parcelas e contratos.
+
+---
+

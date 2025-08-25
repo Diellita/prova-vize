@@ -5,12 +5,11 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<AuthState>({
-    isLoggedIn: false,
-    perfil: "CLIENTE",
-    usuarioId: null, // <- inicializa
+    isLoggedIn: !!localStorage.getItem("token"),
+    perfil: (localStorage.getItem("role") as AuthState["perfil"]) || "CLIENTE",
+    usuarioId: localStorage.getItem("userId"),
   });
 
-  // aceita updates parciais, ex.: setAuth({ isLoggedIn: true, perfil: "APROVADOR", usuarioId: "u2" })
   const setAuth = (next: Partial<AuthState>) =>
     setState((prev) => ({ ...prev, ...next }));
 
