@@ -1,34 +1,2552 @@
 [
   {
-    "contratoId": 1,
-    "clienteId": 1,
-    "clienteNome": "João da Silva",
-    "nomeContrato": "JS_01",
-    "parcelas": [
-      { "parcelaId": 1, "numeroParcela": 1, "vencimento": "2025-08-13", "valor": 1500.00, "status": "PAGO" },
-      { "parcelaId": 2, "numeroParcela": 2, "vencimento": "2025-09-13", "valor": 1500.00, "status": "A_VENCER" },
-      { "parcelaId": 3, "numeroParcela": 3, "vencimento": "2025-10-13", "valor": 1500.00, "status": "A_VENCER" },
-      { "parcelaId": 4, "numeroParcela": 1, "vencimento": "2025-11-13", "valor": 1500.00, "status": "A_VENCER" },
-      { "parcelaId": 5, "numeroParcela": 2, "vencimento": "2025-12-13", "valor": 1500.00, "status": "A_VENCER" },
-      { "parcelaId": 6, "numeroParcela": 3, "vencimento": "2026-01-13", "valor": 1500.00, "status": "A_VENCER" }
+    "id": 1,
+    "contractId": "AS_1_CONTRATO_1",
+    "clientId": 1,
+    "clientName": "Ana Sousa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "AS_1_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
     ]
   },
   {
-    "contratoId": 2,
-    "clienteId": 2,
-    "clienteNome": "Maria Oliveira",
-    "nomeContrato": "MO_02",
-    "parcelas": [
-      { "parcelaId": 1, "numeroParcela": 1, "vencimento": "2025-06-15", "valor": 2000.00, "status": "PAGO" },
-      { "parcelaId": 2, "numeroParcela": 2, "vencimento": "2025-07-15", "valor": 2000.00, "status": "PAGO" },
-      { "parcelaId": 3, "numeroParcela": 3, "vencimento": "2025-08-15", "valor": 2000.00, "status": "PAGO" },
-      { "parcelaId": 4, "numeroParcela": 4, "vencimento": "2025-09-15", "valor": 2000.00, "status": "A_VENCER" },
-      { "parcelaId": 5, "numeroParcela": 5, "vencimento": "2025-10-15", "valor": 2000.00, "status": "A_VENCER" },
-      { "parcelaId": 6, "numeroParcela": 6, "vencimento": "2025-11-15", "valor": 2000.00, "status": "A_VENCER" },
-      { "parcelaId": 7, "numeroParcela": 7, "vencimento": "2025-12-15", "valor": 2000.00, "status": "A_VENCER" },
-      { "parcelaId": 8, "numeroParcela": 8, "vencimento": "2026-01-15", "valor": 2000.00, "status": "A_VENCER" },
-      { "parcelaId": 9, "numeroParcela": 9, "vencimento": "2026-02-15", "valor": 2000.00, "status": "A_VENCER" }
-
+    "id": 2,
+    "contractId": "AS_1_CONTRATO_2",
+    "clientId": 1,
+    "clientName": "Ana Sousa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "AS_1_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "contractId": "AS_1_CONTRATO_3",
+    "clientId": 1,
+    "clientName": "Ana Sousa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "AS_1_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "AS_1_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "contractId": "AS_1_CONTRATO_4",
+    "clientId": 1,
+    "clientName": "Ana Sousa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "AS_1_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "contractId": "AS_1_CONTRATO_5",
+    "clientId": 1,
+    "clientName": "Ana Sousa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "AS_1_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "AS_1_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "contractId": "JR_2_CONTRATO_1",
+    "clientId": 2,
+    "clientName": "João Ribeiro",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "JR_2_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "contractId": "JR_2_CONTRATO_2",
+    "clientId": 2,
+    "clientName": "João Ribeiro",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "JR_2_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "contractId": "JR_2_CONTRATO_3",
+    "clientId": 2,
+    "clientName": "João Ribeiro",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "JR_2_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "JR_2_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "contractId": "JR_2_CONTRATO_4",
+    "clientId": 2,
+    "clientName": "João Ribeiro",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "JR_2_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "contractId": "JR_2_CONTRATO_5",
+    "clientId": 2,
+    "clientName": "João Ribeiro",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "JR_2_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "JR_2_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "contractId": "RF_3_CONTRATO_1",
+    "clientId": 3,
+    "clientName": "Regina Falange",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RF_3_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "contractId": "RF_3_CONTRATO_2",
+    "clientId": 3,
+    "clientName": "Regina Falange",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RF_3_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "contractId": "RF_3_CONTRATO_3",
+    "clientId": 3,
+    "clientName": "Regina Falange",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RF_3_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "RF_3_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "contractId": "RF_3_CONTRATO_4",
+    "clientId": 3,
+    "clientName": "Regina Falange",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RF_3_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "contractId": "RF_3_CONTRATO_5",
+    "clientId": 3,
+    "clientName": "Regina Falange",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RF_3_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RF_3_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "contractId": "GA_4_CONTRATO_1",
+    "clientId": 4,
+    "clientName": "Gabriel Alves",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "GA_4_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "contractId": "GA_4_CONTRATO_2",
+    "clientId": 4,
+    "clientName": "Gabriel Alves",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "GA_4_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "contractId": "GA_4_CONTRATO_3",
+    "clientId": 4,
+    "clientName": "Gabriel Alves",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "GA_4_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "GA_4_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "contractId": "GA_4_CONTRATO_4",
+    "clientId": 4,
+    "clientName": "Gabriel Alves",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "GA_4_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "contractId": "GA_4_CONTRATO_5",
+    "clientId": 4,
+    "clientName": "Gabriel Alves",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "GA_4_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "GA_4_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "contractId": "LM_5_CONTRATO_1",
+    "clientId": 5,
+    "clientName": "Lucas Machado",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "LM_5_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "contractId": "LM_5_CONTRATO_2",
+    "clientId": 5,
+    "clientName": "Lucas Machado",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "LM_5_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "contractId": "LM_5_CONTRATO_3",
+    "clientId": 5,
+    "clientName": "Lucas Machado",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "LM_5_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "LM_5_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "contractId": "LM_5_CONTRATO_4",
+    "clientId": 5,
+    "clientName": "Lucas Machado",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "LM_5_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "contractId": "LM_5_CONTRATO_5",
+    "clientId": 5,
+    "clientName": "Lucas Machado",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "LM_5_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "LM_5_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "contractId": "PR_6_CONTRATO_1",
+    "clientId": 6,
+    "clientName": "Pedro Rocha",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "PR_6_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "contractId": "PR_6_CONTRATO_2",
+    "clientId": 6,
+    "clientName": "Pedro Rocha",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "PR_6_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "contractId": "PR_6_CONTRATO_3",
+    "clientId": 6,
+    "clientName": "Pedro Rocha",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "PR_6_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "PR_6_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "contractId": "PR_6_CONTRATO_4",
+    "clientId": 6,
+    "clientName": "Pedro Rocha",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "PR_6_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "contractId": "PR_6_CONTRATO_5",
+    "clientId": 6,
+    "clientName": "Pedro Rocha",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "PR_6_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "PR_6_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "contractId": "RS_7_CONTRATO_1",
+    "clientId": 7,
+    "clientName": "Renato Santos",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RS_7_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "contractId": "RS_7_CONTRATO_2",
+    "clientId": 7,
+    "clientName": "Renato Santos",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RS_7_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "contractId": "RS_7_CONTRATO_3",
+    "clientId": 7,
+    "clientName": "Renato Santos",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RS_7_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "RS_7_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "contractId": "RS_7_CONTRATO_4",
+    "clientId": 7,
+    "clientName": "Renato Santos",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RS_7_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "contractId": "RS_7_CONTRATO_5",
+    "clientId": 7,
+    "clientName": "Renato Santos",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "RS_7_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "RS_7_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "contractId": "FM_8_CONTRATO_1",
+    "clientId": 8,
+    "clientName": "Fátima Mohamad",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "FM_8_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "contractId": "FM_8_CONTRATO_2",
+    "clientId": 8,
+    "clientName": "Fátima Mohamad",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "FM_8_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "contractId": "FM_8_CONTRATO_3",
+    "clientId": 8,
+    "clientName": "Fátima Mohamad",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "FM_8_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "FM_8_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "contractId": "FM_8_CONTRATO_4",
+    "clientId": 8,
+    "clientName": "Fátima Mohamad",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "FM_8_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "contractId": "FM_8_CONTRATO_5",
+    "clientId": 8,
+    "clientName": "Fátima Mohamad",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "FM_8_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "FM_8_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "contractId": "IM_9_CONTRATO_1",
+    "clientId": 9,
+    "clientName": "Ibrahim Mustafa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "IM_9_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "contractId": "IM_9_CONTRATO_2",
+    "clientId": 9,
+    "clientName": "Ibrahim Mustafa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "IM_9_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "contractId": "IM_9_CONTRATO_3",
+    "clientId": 9,
+    "clientName": "Ibrahim Mustafa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "IM_9_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "IM_9_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "contractId": "IM_9_CONTRATO_4",
+    "clientId": 9,
+    "clientName": "Ibrahim Mustafa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "IM_9_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "contractId": "IM_9_CONTRATO_5",
+    "clientId": 9,
+    "clientName": "Ibrahim Mustafa",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "IM_9_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "IM_9_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "contractId": "HS_10_CONTRATO_1",
+    "clientId": 10,
+    "clientName": "Hideki Suzuki",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "HS_10_C1_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C1_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1250,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C1_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1350,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C1_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C1_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1550,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C1_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1650,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "contractId": "HS_10_CONTRATO_2",
+    "clientId": 10,
+    "clientName": "Hideki Suzuki",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "HS_10_C2_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1300,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C2_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1400,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C2_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1500,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C2_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C2_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C2_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1800,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "contractId": "HS_10_CONTRATO_3",
+    "clientId": 10,
+    "clientName": "Hideki Suzuki",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "HS_10_C3_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1450,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C3_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1550,
+        "status": "ANTECIPADA",
+        "anticipated": true
+      },
+      {
+        "installmentId": "HS_10_C3_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1650,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C3_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C3_P5",
+        "dueDate": "2026-02-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C3_P6",
+        "dueDate": "2026-03-09",
+        "amount": 1950,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "contractId": "HS_10_CONTRATO_4",
+    "clientId": 10,
+    "clientName": "Hideki Suzuki",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "HS_10_C4_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1600,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C4_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1700,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C4_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1800,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C4_P4",
+        "dueDate": "2026-01-09",
+        "amount": 1900,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C4_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2000,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C4_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2100,
+        "status": "PAGO",
+        "anticipated": false
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "contractId": "HS_10_CONTRATO_5",
+    "clientId": 10,
+    "clientName": "Hideki Suzuki",
+    "status": "PENDENTE",
+    "installments": [
+      {
+        "installmentId": "HS_10_C5_P1",
+        "dueDate": "2025-10-09",
+        "amount": 1750,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C5_P2",
+        "dueDate": "2025-11-09",
+        "amount": 1850,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C5_P3",
+        "dueDate": "2025-12-09",
+        "amount": 1950,
+        "status": "AGUARDANDO_APROVACAO",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C5_P4",
+        "dueDate": "2026-01-09",
+        "amount": 2050,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C5_P5",
+        "dueDate": "2026-02-09",
+        "amount": 2150,
+        "status": "A_VENCER",
+        "anticipated": false
+      },
+      {
+        "installmentId": "HS_10_C5_P6",
+        "dueDate": "2026-03-09",
+        "amount": 2250,
+        "status": "PAGO",
+        "anticipated": false
+      }
     ]
   }
 ]
