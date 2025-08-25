@@ -1,42 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
 namespace WebApi.Models
 {
-    public class Contrato
+    public class Contract
     {
-        [Key]
-        public int Id { get; set; } // PK do contrato
+        public int Id { get; set; }               // PK interna
+        public string ContractId { get; set; } = null!; // ex: "CONTRATO-001" (código externo)
+        public string ClientId { get; set; } = null!;    // ex: "CLIENTE-123"
+        public string ClientName { get; set; } = null!;
 
-        [Required]
-        public string NomeContrato { get; set; } = string.Empty;
-
-        // vínculo com o cliente (int)
-        [Required]
-        public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; } = null!;
-
-        // status do contrato
-        [Required]
-        public ContractStatus Status { get; set; } = ContractStatus.PENDENTE;
-
-        // última data da última parcela (UTC)
-        [Required]
-        public DateTime VencimentoContrato { get; set; }
-
-        // auditoria (UTC)
-        [Required]
-        public DateTime DataAlteracao { get; set; }
-
-        [Required]
-        public DateTime DataInsercao { get; set; }
-
-        // agregados
-        [Required]
-        public int NumeroParcelas { get; set; }
-
-        // relação com parcelas
-        public List<Parcela> Parcelas { get; set; } = new();
+        public List<Installment> Installments { get; set; } = new();
     }
 }

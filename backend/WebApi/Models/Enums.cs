@@ -7,10 +7,4 @@ namespace WebApi.Models
         AGUARDANDO_APROVACAO = 2,
         ANTECIPADA = 3
     }
-    public enum TipoUsuario
-    {
-        CLIENTE = 0,
-        APROVADOR = 1
-    }
 }
-
